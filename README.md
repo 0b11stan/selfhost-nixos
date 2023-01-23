@@ -7,6 +7,7 @@ sudo loadkeys fr
 sudo -i 
 ls /sys/firmware/efi/efivars
 ping -c 1 tic.sh
+parted /dev/sda -- mklabel gpt
 fdisk /dev/vda
 # /dev/sdx1	2048	+512MB	EFI System
 # /dev/sdx2	+512MB	100%	Linux LVM
@@ -30,9 +31,13 @@ mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/disk/by-label/swap
 nixos-generate-config --root /mnt/
-vi /mnt/etc/nixos/configuration.nix
+passwd # change root password
+scp -r src/* root@$IP:/mnt/etc/nixos/ # from host
 nixos-install
 reboot
-# after connect
+# after connect as root
 passwd tristan
+ssh-keygen
+cp ~/.ssh/id_rsa.pub /home/tristan/
+ssh tristan@$IP cat /home/tristan/id_rsa.pub | wl-copy # from host
 ```
