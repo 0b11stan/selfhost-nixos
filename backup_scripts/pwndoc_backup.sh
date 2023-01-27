@@ -12,5 +12,5 @@ backup() {
 }
 
 backup $CTR_DATABASE /data/db pwndoc-database-$(date +%s).tar.gz
-backup $CTR_TEMPLATE /app/report-templates pwndoc-templates-$(date +%s).tar.gz
+backup $CTR_TEMPLATE /app/report-templates pwndoc-template-$(date +%s).tar.gz
 scp -r $RHOST:$TMP_DIR/ .
