@@ -59,7 +59,9 @@ in {
     after = ["docker.service"];
     bindsTo = ["docker.service"];
     documentation = ["https://github.com/0b11stan/selfhost-docker"];
-    script = "${pkgs.docker-selfhost}/docker-selfhost.sh";
+    script = "${pkgs.docker-selfhost}/start.sh";
+    # TODO : fix the stop service which is stoping witn error
+    preStop = "${pkgs.docker-selfhost}/stop.sh";
     environment.DJANGO_SECRET_KEY = djangokey;
   };
 
