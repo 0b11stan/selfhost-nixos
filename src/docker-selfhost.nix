@@ -7,7 +7,7 @@ with (import <nixpkgs> {});
       src = fetchGit {
         url = "https://github.com/0b11stan/selfhost-docker.git";
         ref = "dev";
-        rev = "fa3d38e0c0080fabf9d311da0141b44d5184fe36";
+        rev = "b8065b9d0238afc4dccc6474ad93317e2aee3160";
         submodules = true;
       };
 
