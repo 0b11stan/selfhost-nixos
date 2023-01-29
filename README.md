@@ -87,10 +87,10 @@ ssh tristan@$IP cat /home/tristan/id_rsa.pub | wl-copy # from host
 * [ ] add prometheus for monitoring
 * [ ] deploy bunkerweb as a WAF
 
-## IP Blacklist 
+## Extra
 
-Generated via the following command during an ssh bruteforce
+IP blacklist generated via the following command during an ssh bruteforce
 
 ```bash
-docker logs docker-selfhost-gitea-1 | grep 'invalid user' | cut -d ' ' -f 6 | sort -u | tee /tmp/blacklist
+docker logs docker-selfhost-gitea-1 | grep 'invalid user' | cut -d ' ' -f 6 | sort -u
 ```
