@@ -80,7 +80,7 @@ ssh tristan@$IP cat /home/tristan/id_rsa.pub | wl-copy # from host
 * [x] backup and restore script for shynet
 * [x] backup and restore script for pwndoc
 * [x] backup and restore script for gitea
-* [ ] systemd service only reload needed apps
+* [x] systemd service only reload needed apps
 * [ ] backup script for nextcloud
 * [ ] restore script for nextcloud
 * [ ] merge hardware-configuration.virt.nix hardware-configuration.remote.nix 
