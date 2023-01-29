@@ -6,12 +6,12 @@ with (import <nixpkgs> {});
 
       src = fetchGit {
         url = "https://github.com/0b11stan/selfhost-docker.git";
-        ref = "dev";
-        rev = "b8065b9d0238afc4dccc6474ad93317e2aee3160";
+        ref = "master";
+        rev = "b164f56749ae193729430f940024e27c6ef0b1e7";
         submodules = true;
       };
 
       inherit coreutils gnused docker;
       builder = "${bash}/bin/bash";
-      args = [./docker-selfhost-builder.sh];
+      args = [./builder.sh];
     }
