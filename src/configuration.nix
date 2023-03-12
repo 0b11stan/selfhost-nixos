@@ -8,6 +8,7 @@
 in {
   imports = [./hardware-configuration.remote.nix];
 
+  # TODO : use system.autoUpgrade ??
   networking = {
     hostName = "selfhost";
     networkmanager.enable = true;
